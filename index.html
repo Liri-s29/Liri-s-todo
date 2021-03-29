@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liri's To-Do</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <!-- local stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+    <div class="leftbar" id="leftbar">
+        <img src="images/Icon.png" alt="Icon" class="icon">
+        <h3 class="close  logged-in " id="close-side-bar">Close &nbsp;</i></h3>
+        <h3 class="add-task-button logged-in" id="your-task-button">Daily Tasks &nbsp;</i></h3>
+        
+        <h3 class="add-task-button logged-in" id="your-task-button">Long Time Goals &nbsp;</i></h3>
+        
+
+        
+        </div>
+    </div>
+    <div class="center-container" id="center-container">
+        <nav class="nav-bar">
+            <button class="nav-button logged-in" id="logout-button">Sign out</button>
+            <button class="nav-button logged-out side-bar-button" id="show-side-bar"><i class="fas fa-tasks"></i></button>
+            <button class="nav-button logged-in" id="user-button">User</button>
+            <button class="nav-button logged-out" id="signup-button">Signup</button>
+            <button class="nav-button logged-out" id="login-button">Login</button>
+            <button class="nav-button logged-out" id="about-button">About</button>
+
+        </nav>
+        
+        <!-- home page -->
+            <div class="starting-page" id="starting-page">
+                <h1 class="liri-todo">Liri's To-Do</h1>
+                <h4> <i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;It helps you to set your daily tasks, your short time and long time life goals.</h4>
+                <h4><i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;Start using this and you'll find yourself become more productive.</h4>
+                <h4><i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;You can always keep a note of whatever you want, be is for learning or important event.</h4>
+                <h4> <i class="fas fa-check-circle"></i>&nbsp;&nbsp;&nbsp;You can use it anytime and from anywhere.</h4>
+            </div>
+            <!-- Login page -->
+            <div class="login" id="login">
+                <h1>SignIn to access your To-Do!</h1>
+                <form id="login-form">
+                    <input type="email" placeholder="Email" id="signin-id"  required><br>
+                    <input type="password" placeholder="Password" id="signin-password"  required><br>
+                    <button class="login-button button-1" id="signin-user" type="button">SignIn</button>
+                </form>
+            </div>
+            <!-- Signup page -->
+            <div class="signup" id="signup">
+                <h1>SignUp and become more productive!</h1>
+                <form id="signup-form">
+                    <input type="email" placeholder="Email" id="signup-id"  required><br>
+                    <input type="password" placeholder="Password" id="signup-password"  required><br>
+                    <button class="signup-button button-1" id="signup-user" type="button">SignUp</button>
+                </form>
+            </div>
+            <!-- User page -->
+            <div class="user" id="user">
+                <div class="user-content">
+                <img src="images/user.jpg" alt="User" class="user-image" id="user-image">
+                
+                    <h2 id="user-name">Name: &nbsp;&nbsp;UserName</h2>
+                    <h2 id="user-email">Email&nbsp; : &nbsp;&nbsp;&nbsp;User@Mail.com</h2>
+                    
+                   
+                    </div>
+                    
+                    <button type="button" class="delete-account" id="edit-profile-button">Edit Profile</button>
+                    <h2 style="margin-top: 20rem;">Click the List icon on the left to access your Tasks!.</h2>
+            </div>
+            <!-- Edit profile -->
+            <div class="edit-profile" id="edit-profile">
+                <h1>You can change your profile details here.</h1>
+                <form id="edit-name-form">
+                    <h2>Change name:</h2>
+                    <input type="text" placeholder="Name" id="user-name-edit" ><br>
+                    <button class="submit-profile button-1" id="submit-name" type="button">Change Name</button>
+                </form>
+                
+                <form id="edit-password-form">
+                    
+                    <h2>Change password:</h2>
+                    <input type="password" placeholder="New Password" id="password-edit" ><br>
+                    <button class="submit-profile button-1" id="submit-password" type="button">Change Password</button>
+                </form>
+            </div>
+
+            <!-- add task -->
+            <div class="add-task" id="add-task">
+                <h1>Fill in the title and description to add a task!</h1>
+                <form id="add-task-form">
+                    <input type="text" placeholder="Task Name" name="name" id="task-name-value" required><br>
+                    <textarea placeholder="Task description" name="description" id="task-description-value" ></textarea>
+                    <button class="submit-task-button button-1" id="submit-task-button">Add task</button>
+                </form>
+            </div>
+            <!-- add note -->
+            <div class="add-note" id="add-note">
+                <h1>Fill in the title and description to add a note!</h1>
+                <form id="add-note-form">
+                    <input type="text" placeholder="Name of the Note" name="name" id="note-name-value" required><br>
+                    <textarea placeholder="Note description" name="description" id="note-description-value" ></textarea>
+                    <button class="submit-note-button button-1" id="submit-note-button">Add Note</button>
+                </form>
+            </div>
+            <!-- task Div -->
+            <div class="display-task" id="display-task">
+                <h1>Your tasks</h1>
+                <h3 class="add-task-button logged-in" id="add-task-button">Add Task &nbsp; <i class="fas fa-plus "></i></h3>
+               
+                    <div id="task-list" class="task-list" >
+                           
+                </div>
+                
+            </div>
+
+                
+            
+           
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyAxqX2yGP1msZzol81uEwTiegBKF2Qk4l0",
+      authDomain: "todobyliri.firebaseapp.com",
+      projectId: "todobyliri",
+      storageBucket: "todobyliri.appspot.com",
+      messagingSenderId: "11011399526",
+      appId: "1:11011399526:web:ba3c9092367608f433b2a7",
+      measurementId: "G-Q8QBRHB62D"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  
+    
+    <script src="https://kit.fontawesome.com/2dbc887648.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
